@@ -1,0 +1,19 @@
+<header>
+  <div class="logo-and-title">
+    <img src = "assets/images/logo.png" width="30px" height = "30px" />
+    <h1>YourChef</h1>
+  </div>
+  <div class = "login-signup">
+    <button type="text" (click)="showDialog('login')" pButton  label="Login"></button>
+    <span> | </span>
+    <button type="text" (click)="showDialog('signup')" pButton label="Signup"></button>
+  </div>
+  <!-- login dialog -->
+  <p-dialog header="Login"  [(visible)]="displayLoginBox" [modal]="true" [responsive]="true" >
+    <app-login></app-login>
+  </p-dialog>
+  <!-- signup dialog -->  
+  <p-dialog header="signup" [(visible)]="displaySignupBox" [modal]="true" [responsive]="true" >
+    <app-signup></app-signup>
+  </p-dialog>
+</header>

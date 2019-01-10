@@ -1,0 +1,19 @@
+.map-container{
+    margin: 10px 0 0 10px;
+    width:30%;
+    
+}
+
+.geocoder-container{
+    margin-top: 8px; 
+}
+
+.map{
+    height: 300px;
+    vertical-align: top;
+    border:1px solid black;
+}
+
+::ng-deep .geocoder ul{
+    list-style-type: none;
+}
