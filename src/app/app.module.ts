@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+import {  APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from '@angular/common';
 //primeng modules
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
@@ -16,7 +17,6 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 //services
 import { GeolocationService } from './geolocation.service';
-import { GooglePlacesDirective } from './google-places.directive';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { MapComponent } from './map/map.component';
@@ -30,7 +30,6 @@ declare var require: any;
     HeaderComponent,
     LoginComponent,
     SignupComponent,
-    GooglePlacesDirective,
     MapComponent
   ],
   imports: [
@@ -48,7 +47,11 @@ declare var require: any;
       accessToken: 'pk.eyJ1IjoidmlyZXNoLWtoYW5kZWx3YWwiLCJhIjoiY2pxNmVnN2hqMjdiaTQ4ankwZGg5aDJ4ZyJ9.dynn0Wrg3r56fntaYOd_bA' // Optionnal, can also be set per map (accessToken input of mgl-map)
     })
   ],
-  providers: [GeolocationService],
+  providers: [
+    GeolocationService,
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

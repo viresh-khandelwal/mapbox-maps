@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private displayLoginBox: boolean = false;
-  private displaySignupBox: boolean = false;
+  displayLoginBox: boolean = false;
+  displaySignupBox: boolean = false;
   constructor() { }
 
   showDialog(boxType) {

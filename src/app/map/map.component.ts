@@ -37,7 +37,7 @@ export class MapComponent implements OnInit, AfterViewInit {
   getUserLocationOnMap(): void {
     this.geolocationService.getLocation({
       enableHighAccuracy: true,
-      timeout: 1000,
+      timeout: 10000,
       maximumAge: 0
     }).subscribe(
       (position) => {
